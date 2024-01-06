@@ -28,7 +28,7 @@ const ProductList = () => {
         {!loading && products.length === 0 && <p>No products available.</p>}
         {!loading &&
           products.map(product => (
-            <div key={product.id} className="product-item" onClick={() => handleProductClick(product)}>
+            <div key={product.id} className={`product-item ${selectedProduct && selectedProduct.id === product.id ? 'selected' : ''}`} onClick={() => handleProductClick(product)}>
               <h3>{product.title}</h3>
               <h4>Price : {product.price}$</h4>
               <p>Category : {product.category}</p>
